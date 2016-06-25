@@ -123,27 +123,27 @@ interface ApiSettings {
     responseAsync     ?: boolean,
 
     // callbacks before request
-    beforeSend        ?: () => void,
-    beforeXHR         ?: () => void,
-    onRequest         ?: () => void,
+    beforeSend        ?: (settings: any) => void,
+    beforeXHR         ?: (xhr: any) => void,
+    onRequest         ?: (promise: any, xhr: any) => void,
 
 // after request
     onResponse        ?: boolean, // function(response) { },
 
     // response was successful, if JSON passed validation
-    onSuccess         ?: () => void,
+    onSuccess         ?: (response: any, $module: any) => void,
 
     // request finished without aborting
-    onComplete        ?: () => void,
+    onComplete        ?: (response: any, $module: any) => void,
 
     // failed JSON success test
-    onFailure         ?: () => void,
+    onFailure         ?: (response: any, $module: any) => void,
 
     // server error
-    onError           ?: () => void,
+    onError           ?: (errorMessage: any, $module: any) => void,
 
     // request aborted
-    onAbort           ?: () => void,
+    onAbort           ?: (errorMessage: any, $module: any) => void,
 
     successTest       ?: boolean,
 
