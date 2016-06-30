@@ -253,26 +253,32 @@ interface TabSettings {
 interface JQuery {
 
     accordion (params?: AccordionSettings):void;
+    accordion (behavior: string, ...args: any[]): void;
     api       (params?: ApiSettings):void;
-    checkbox  (params?:any):void;
+    checkbox  (params?: any):void;
+    checkbox  (behavior: string, ...args: any[]): void;
     colorize  (params?:any):void;
     dimmer    (params?:any):void;
     dropdown  (params?:any):void;
     embed     (params?:any):void;
     form      (params?:any):void;
-    modal     (params?:any):void;
+    modal     (params?: any):void;
+    modal     (behavior: string, ...args: any[]): void;
     nag       (params?:any):void;
     popup     (params?:any): void;
     progress  (params?:any):void;
     rating    (params?:any):void;
     search    (params?:any):void;
     shape     (params?:any):void;
-    sidebar   (params?:any):void;
+    sidebar   (behavior: string, ...args: any[]): void;
+    sidebar   (params?: any): void;
     site      (params?:any):void;//check
     state     (params?:any):void;
     sticky    (params?:any):void;
     tab       (params: TabSettings): void;
-    transition(params?:any):void;
+    transition(params?: any): void;
+    transition(behavior: string, ...args: any[]): void;
+    transition(transition?: string, duration?: string|number, callback?: () => void): void;
     video     (params?:any):void;
     visibility(params?:any):void;
     visit     (params?:any):void;//check
